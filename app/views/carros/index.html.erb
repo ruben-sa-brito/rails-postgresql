@@ -1,0 +1,41 @@
+<section class="py-5 text-center container">
+
+    <table class="table" style="margin-top: 30px;">
+
+        <thead class="">
+            <h1 style="margin-top: 30px;"> Lista de Carros </h1>
+            <hr>
+                <a href="<%= carros_cadastrar_path %>" class="btn btn-success">Cadastrar novo carro</a>
+            </hr>
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Modelo</th>
+                <th>Ano</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @carros.each do |carro|%>
+                
+                <tr>
+                    <td class=""> <%= carro.id %> </td>
+                    <td class=""> <%= carro.nome %> </td>
+                    <td class=""> <%= carro.modelo %> </td>
+                    <td class=""> <%= carro.ano %></td>
+                    <td class=""> 
+                        <%= link_to "Mostrar", carros_show_path(carro.id), "class": "btn btn-primary" %>
+                        <%= link_to "Editar", carros_editar_path(carro.id), "class": "btn btn-warning" %>
+                        <form style="display:inline" action="<%= carros_apagar_path(carro.id) %>" onsubmit="return confirm('Confirma?')" method="POST">
+                            <input type="hidden" name="_method" value="delete"> 
+                            <button type="submit" class= "btn btn-danger"> Apagar </button>
+                        </form>    
+                    </td>
+                </tr>
+
+            <% end %>
+        </tbody>
+
+    </table>
+      
+</section>

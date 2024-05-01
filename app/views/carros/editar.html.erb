@@ -1,0 +1,14 @@
+<section class="py-5 text-center container">
+<h1 style="margin-top:30px"> Mostrando carro </h1>
+    <hr>
+    <div style="text-align:left">
+    <form action="<%= carros_alterar_path(@carro) %>" method="post">
+        <input type="hidden" name="_method" value="put">
+        <%= render "form" %>
+        
+        <hr>
+        <button type="submit" class="btn btn-success">Enviar</button>
+        <a href="/carros" class="btn btn-primary"> Voltar </a>
+    </form>    
+    </div>
+</section>
