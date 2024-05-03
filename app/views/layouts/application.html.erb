@@ -27,6 +27,9 @@
               <li class="nav-item">
                 <a class="nav-link" href="<%= carros_path %>">Carros</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="<%= fornecedores_path %>">Fornecedores</a>
+              </li>
             </ul>
             <form class="d-flex" role="search">
               <input class="form-control me-2" type="search" placeholder="Buscar carros..." aria-label="Search">
@@ -37,7 +40,9 @@
       </nav>
     </header>
     <main class="container">
+    
       <%= yield %>
+     
     </main>
   </body>
 </html>

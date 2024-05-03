@@ -1,9 +1,15 @@
 <section class="py-5 text-center container">
+    
 
-    <table class="table" style="margin-top: 30px;">
+    <table class="table" style="margin-top: 30px;"> 
 
         <thead class="">
             <h1 style="margin-top: 30px;"> Lista de Carros </h1>
+                <% if flash[:success] %>
+                    <div style="color: green">
+                        <%= flash[:success] %>
+                    </div>
+                <% end %>
             <hr>
                 <a href="<%= carros_cadastrar_path %>" class="btn btn-success">Cadastrar novo carro</a>
             </hr>
@@ -27,7 +33,8 @@
                         <%= link_to "Mostrar", carros_show_path(carro.id), "class": "btn btn-primary" %>
                         <%= link_to "Editar", carros_editar_path(carro.id), "class": "btn btn-warning" %>
                         <form style="display:inline" action="<%= carros_apagar_path(carro.id) %>" onsubmit="return confirm('Confirma?')" method="POST">
-                            <input type="hidden" name="_method" value="delete"> 
+                            <input type="hidden" name="_method" value="delete">
+                            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>"> 
                             <button type="submit" class= "btn btn-danger"> Apagar </button>
                         </form>    
                     </td>
@@ -37,5 +44,6 @@
         </tbody>
 
     </table>
-      
 </section>
+
+

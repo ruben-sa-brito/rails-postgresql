@@ -1,4 +1,4 @@
-<section class="py-5 text-center container">
+<section class="py-5 col-4 text-center container">
 <p style="color: green"><%= notice %></p>
 
 <h1>Fornecedores</h1>
@@ -7,10 +7,11 @@
   <% @fornecedores.each do |fornecedor| %>
     <%= render fornecedor %>
     <p>
-      <%= link_to "Show this fornecedor", fornecedor %>
+      <%= link_to "Mostrar", fornecedor, class:"btn btn-primary" %>
     </p>
   <% end %>
 </div>
 
-<%= link_to "New fornecedor", new_fornecedor_path %>
+<%= link_to "Novo fornecedor", new_fornecedor_path, class:"btn btn-success" %>
 </section>
+

@@ -18,7 +18,7 @@ class CarrosController < ApplicationController
         carro.modelo = params[:modelo]
         carro.ano = params[:ano]
         carro.save
-
+        flash[:success] = "Carro editado com sucesso!"
         redirect_to carros_path
     end
 
@@ -27,12 +27,15 @@ class CarrosController < ApplicationController
 
     def criar
         Carro.create(nome: params[:nome], modelo: params[:modelo], ano: params[:ano])
+        flash[:success] = "Carro cadastrado com sucesso!"
         redirect_to carros_path
     end 
 
     def apagar
         carro = Carro.find(params[:id]) 
-        carro.destroy 
+        carro.destroy
+        
+        flash[:success] = "Carro apagado com sucesso!"
         
         redirect_to carros_path 
     end 

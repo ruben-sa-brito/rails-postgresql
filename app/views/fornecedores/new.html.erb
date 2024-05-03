@@ -1,9 +1,12 @@
-<h1>New fornecedor</h1>
+<section class="py-5 col-4 text-center container">
+  <h1>New fornecedor</h1>
 
-<%= render "form", fornecedor: @fornecedor %>
+  <%= render "form", fornecedor: @fornecedor %>
 
-<br>
+  <br>
 
-<div>
-  <%= link_to "Back to fornecedores", fornecedores_path %>
-</div>
+  <div>
+    <%= link_to "Back to fornecedores", fornecedores_path, class:"btn btn-primary" %>
+  </div>
+</section>
+
