@@ -1,5 +1,10 @@
 <section class="py-5 col-4 text-center container">
 <h1 style="margin-top:30px"> Cadastrar novo carro </h1>
+    <% if flash[:error] %>
+        <div class="alert alert-danger" role="alert">
+            <%= flash[:error] %>
+        </div>    
+    <% end %>
     <hr>
     <div style="text-align:left">
     

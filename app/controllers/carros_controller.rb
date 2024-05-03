@@ -26,9 +26,15 @@ class CarrosController < ApplicationController
     end 
 
     def criar
-        Carro.create(nome: params[:nome], modelo: params[:modelo], ano: params[:ano])
-        flash[:success] = "Carro cadastrado com sucesso!"
-        redirect_to carros_path
+        if params[:nome].blank?
+            flash[:error] = "Nome precisa ser preenchido!"
+            redirect_to carros_cadastrar_path
+        else   
+            Carro.create(nome: params[:nome], modelo: params[:modelo], ano: params[:ano])
+            flash[:success] = "Carro cadastrado com sucesso!"
+            redirect_to carros_path   
+        end
+        
     end 
 
     def apagar
