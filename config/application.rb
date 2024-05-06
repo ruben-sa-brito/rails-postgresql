@@ -19,6 +19,8 @@ module EcommercePostgresql
 
     config.time_zone = "Brasilia"
 
+    config.i18n.default_locale = :'pt-BR'
+
     config.active_record.default_timezone = :local
 
     # Configuration for the application, engines, and railties goes here.

@@ -1,0 +1,17 @@
+pt-BR:
+  activerecord:
+    errors:
+      messages:
+        blank: "não pode ficar em branco"
+        taken: "já está em uso"
+        too_short: "é muito curto (mínimo de %{count} caracteres)"
+        too_long: "é muito longo (máximo de %{count} caracteres)"
+        # Adicione outras mensagens de erro conforme necessário
+      models:
+        model_name:
+          attributes:
+            attribute_name:
+              blank: "não pode ficar em branco"
+              taken: "já está em uso"
+              too_short: "é muito curto (mínimo de %{count} caracteres)"
+              too_long: "é muito longo (máximo de %{count} caracteres)"
