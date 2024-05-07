@@ -6,12 +6,18 @@ pt-BR:
         taken: "já está em uso"
         too_short: "é muito curto (mínimo de %{count} caracteres)"
         too_long: "é muito longo (máximo de %{count} caracteres)"
-        # Adicione outras mensagens de erro conforme necessário
-      models:
-        model_name:
-          attributes:
-            attribute_name:
-              blank: "não pode ficar em branco"
-              taken: "já está em uso"
-              too_short: "é muito curto (mínimo de %{count} caracteres)"
-              too_long: "é muito longo (máximo de %{count} caracteres)"
+        not_a_number: "não é um número"
+        not_an_integer: "não é um número inteiro"
+        greater_than: "deve ser maior que %{count}"
+        greater_than_or_equal_to: "deve ser maior ou igual a %{count}"
+        equal_to: "deve ser igual a %{count}"
+        less_than: "deve ser menor que %{count}"
+        less_than_or_equal_to: "deve ser menor ou igual a %{count}"
+        other_than: "deve ser diferente de %{count}"
+        odd: "deve ser ímpar"
+        even: "deve ser par"
+        invalid: "não é válido"
+        between: "deve estar entre %{min} e %{max}"
+        not_a_valid_year: "não é um ano válido"
+
+             
