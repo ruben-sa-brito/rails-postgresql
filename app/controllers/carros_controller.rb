@@ -23,16 +23,16 @@ class CarrosController < ApplicationController
     end
 
     def cadastrar
+        @carro = Carro.new
     end 
 
     def criar
-        if params[:nome].blank?
-            flash[:error] = "Nome precisa ser preenchido!"
-            redirect_to carros_cadastrar_path
-        else   
-            Carro.create(nome: params[:nome], modelo: params[:modelo], ano: params[:ano])
+        @carro = Carro.new(nome: params[:nome], modelo: params[:modelo], ano: params[:ano])
+        if @carro.save
             flash[:success] = "Carro cadastrado com sucesso!"
-            redirect_to carros_path   
+            return redirect_to carros_path 
+        else   
+            render :cadastrar, status: :unprocessable_entity  
         end
         
     end 
