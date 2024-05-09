@@ -37,6 +37,7 @@ class FornecedoresController < ApplicationController
   # PATCH/PUT /fornecedores/1 or /fornecedores/1.json
   def update
     respond_to do |format|
+      
       if @fornecedor.update(fornecedor_params)
         format.html { redirect_to fornecedor_url(@fornecedor), notice: "Fornecedor was successfully updated." }
         format.json { render :show, status: :ok, location: @fornecedor }
@@ -65,6 +66,6 @@ class FornecedoresController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def fornecedor_params
-      params.require(:fornecedor).permit(:nome, :cnpj, :endereco, :cep, :email)
+      params.require(:fornecedor).permit(:nome, :cnpj, :endereco, :cep, :email, :fornecedor_tipo_id)
     end
 end

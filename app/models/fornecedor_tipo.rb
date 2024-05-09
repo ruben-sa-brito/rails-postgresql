@@ -1,0 +1,2 @@
+class FornecedorTipo < ApplicationRecord
+end

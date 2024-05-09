@@ -11,6 +11,11 @@
       </ul>
     </div>
   <% end %>
+  <div>
+    <%= form.label :fornecedor_tipo_id, style: "display: block" %>
+    <%= form.collection_select :fornecedor_tipo_id, FornecedorTipo.all, :id, :nome, { prompt: "Selecione o tipo de fornecedor" }, { class: "form-control" } %>
+
+  </div>
 
   <div>
     <%= form.label :nome, style: "display: block" %>
