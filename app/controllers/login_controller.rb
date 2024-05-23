@@ -10,14 +10,20 @@ class LoginController < ApplicationController
             flash[:error] = "Email ou senha incorretos!"
             return redirect_to "/login"
         end
-        cookies[:cookie_adm_logado] = { value: {
+        time = 1.hour.from_now
+        payload = {
             id: adm.id,
             nome: adm.nome,
             email: adm.email
-        }, 
-        http_only: true,
-        expires: 1.hour.from_now
-    }
+            }.to_json
+             
+        token = JWT.encode(payload, TOKEN_JWT, 'HS256')
+
+        cookies[:cookie_adm_logado] = { 
+            value: token,
+            http_only: true,
+            expires: time
+        }
         
         redirect_to "/"
     end
