@@ -22,6 +22,7 @@ default: &default
 development:
   <<: *default
   database: ecommerce_postgresql_development
+  host: localhost
   username: james
   password: 1234
 
