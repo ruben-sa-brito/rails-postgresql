@@ -25,31 +25,40 @@
                 <a class="nav-link active" aria-current="page" href="/">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="<%= carros_path %>">Carros</a>
+                <a class="nav-link" href="/useres/sign_in">Login</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="<%= fornecedores_path %>">Fornecedores</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="<%= fornecedor_tipos_path %>">Tipos de fornecedores</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="<%= login_sair_path %>">Sair</a>
-              </li>
+              
             </ul>
             <form class="d-flex" role="search">
               <input class="form-control me-2" type="search" placeholder="Buscar carros..." aria-label="Search">
               <button class="btn btn-outline-success" type="submit">Buscar</button>
-            # <span style="color: #fff">  <%= @adm.nome %> </span>
             </form>
           </div>
         </div>
       </nav>
     </header>
     <main class="container">
-    
+    <br>
+    <section class="py-5 col-4 text-center container">
+      <% if flash[:success] %>
+        <div class="alert alert-danger" role="alert">
+          <li><%= flash[:success] %></li>
+        </div>
+      <% elsif flash[:error]%>
+        <div class="alert alert-danger">
+          <h2>Confira o erro abaixo</h2>
+          <ul>
+            <li><%= flash[:error] %></li>
+          </ul>
+        </div>  
+      <% else %>
+        <% flash.each do |key, value|%>
+          <div class="flash <%= key %>"> <%= value %> </div>
+        <% end %>  
+      <% end %>    
       <%= yield %>
-     
+    </section>
     </main>
   </body>
 </html>
+

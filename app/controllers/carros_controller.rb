@@ -1,4 +1,5 @@
 class CarrosController < ApplicationController
+    layout 'logado'
     
     def index
         @carros = Carro.all
