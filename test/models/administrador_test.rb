@@ -12,6 +12,30 @@ class AdministradorTest < ActiveSupport::TestCase
         valido = @administrador.valid?
         #Assert
         assert valido
-    end    
+    end 
+
+    test "deve ser um nome invalido" do
+        #Arrange
+        @administrador.nome = ""
+        #Act
+        #Assert
+        assert_not @administrador.valid?
+    end  
+     
+    test "deve ser um senha invalida" do
+        #Arrange
+        @administrador.senha = ""
+        #Act
+        #Assert
+        assert_not @administrador.valid?
+    end  
+    
+    test "deve ser um nome invalido(limites de caracteres excedido)" do
+      #Arrange
+      @administrador.nome = "a"*151
+      #Act
+      #Assert
+      assert_not @administrador.valid?
+  end 
 end 
 

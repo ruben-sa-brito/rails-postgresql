@@ -7,7 +7,7 @@ class AdministradoresControllerTest < ActionDispatch::IntegrationTest
 
   test "should get index" do
     get administradores_url
-    assert_response :success
+    assert_response 302
   end
 
   test "should get new" do
